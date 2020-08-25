@@ -1,0 +1,15 @@
+import random #imports the random module
+import win32com.client as wincl #in windows uses microsoft texttospeech engine, consult readme for more options
+
+
+when = ["A few years ago","Long long time ago","Once upon a time","When Earth was young"] #when does the story refer to
+
+who = ["a rabbit","a cow", "Ram","a tiger"] #this the a story of ....
+
+what = ["was running.","was walking.","saw the sunrise.","met his friend on sunday."] #what it might be doing
+
+#print(random.choice(when)+", "+ random.choice(who)+" "+ random.choice(what)) #we can print the story but instead we'll ask the computer to read it outloud
+
+
+speak = wincl.Dispatch("SAPI.SpVoice") #sapi on windows is the tts module
+speak.Speak(random.choice(when)+", "+ random.choice(who)+" "+ random.choice(what)) #we use it to speak outloud
